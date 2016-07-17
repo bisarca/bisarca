@@ -1,0 +1,31 @@
+language: php
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+php:
+  - 5.6
+  - 7.0
+  - hhvm
+  - nightly
+
+matrix:
+  allow_failures:
+    - php: nightly
+
+install:
+  - composer require --no-update satooshi/php-coveralls:~0.6
+  - composer require --no-update friendsofphp/php-cs-fixer:~1.11
+  - composer install -n --no-progress
+
+before_script:
+  - vendor/bin/php-cs-fixer --diff --dry-run -v fix
+
+after_script:
+  - vendor/bin/coveralls -v
+
+notifications:
+  email: false
