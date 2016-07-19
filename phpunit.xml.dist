@@ -8,8 +8,4 @@
             <directory suffix=".php">Bisarca</directory>
         </whitelist>
     </filter>
-    <logging>
-        <log type="coverage-text"/>
-        <log target="build/logs/clover.xml" type="coverage-clover"/>
-    </logging>
 </phpunit>

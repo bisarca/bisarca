@@ -24,7 +24,7 @@ before_script:
   - vendor/bin/php-cs-fixer --diff --dry-run -v fix
 
 script:
-  - vendor/bin/phpunit -v
+  - vendor/bin/phpunit -v --coverage-clover build/logs/clover.xml
 
 after_script:
   - vendor/bin/coveralls -v
