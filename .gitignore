@@ -1,3 +1,4 @@
+/.subsplit/
 /build/
 /composer.lock
 /phpunit.xml
