@@ -8,12 +8,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Bisarca\\": "src/Bisarca/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Bisarca\\": "tests/Bisarca/"
+            "Bisarca\\": "Bisarca/"
         }
     },
     "config": {

@@ -32,8 +32,7 @@ if (null === $input->getArgument('path')) {
     $config
         ->finder(
             Symfony\CS\Finder\DefaultFinder::create()
-                ->in(__DIR__.'/src/')
-                ->in(__DIR__.'/tests/')
+                ->in(__DIR__.'/Bisarca/')
         );
 }
 

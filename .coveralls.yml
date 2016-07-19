@@ -1,0 +1,3 @@
+# for php-coveralls
+coverage_clover: build/coverage/clover.xml
+src_dir: Bisarca
