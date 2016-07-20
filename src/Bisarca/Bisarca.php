@@ -34,8 +34,6 @@ use Symfony\Component\DomCrawler\Crawler;
 /**
  * Bisarca Crawler.
  *
- * Class for spidering the network, in a standalone file
- *
  * Examinations are conducted in width,
  * extracting all possible information including: content, dom (DOMDocument),
  * headers, robots.txt, download speeds and data-satellite...
