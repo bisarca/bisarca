@@ -11,6 +11,9 @@
             "Bisarca\\": "src/"
         }
     },
+    "bin": [
+        "bin/bisarca"
+    ],
     "config": {
         "sort-packages": true
     },
