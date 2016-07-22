@@ -11,6 +11,11 @@
             "Bisarca\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Bisarca\\": "tests/"
+        }
+    },
     "bin": [
         "bin/bisarca"
     ],
