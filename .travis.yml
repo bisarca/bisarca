@@ -8,7 +8,6 @@ cache:
 
 php:
   - 7.0
-  - hhvm
 
 install:
   - composer require --no-update satooshi/php-coveralls:~0.6
