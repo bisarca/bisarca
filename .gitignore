@@ -1,5 +1,6 @@
-/.subsplit/
-/build/
-/composer.lock
-/phpunit.xml
-/vendor/
+.php_cs.cache
+.subsplit/
+build/
+composer.lock
+phpunit.xml
+vendor/

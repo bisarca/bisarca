@@ -7,14 +7,8 @@ cache:
     - $HOME/.composer/cache
 
 php:
-  - 5.6
   - 7.0
   - hhvm
-  - nightly
-
-matrix:
-  allow_failures:
-    - php: nightly
 
 install:
   - composer require --no-update satooshi/php-coveralls:~0.6

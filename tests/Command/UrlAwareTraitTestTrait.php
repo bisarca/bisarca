@@ -1,31 +1,24 @@
 <?php
 
 /*
- * Copyright (C) 2016 Emanuele Minotto
+ * This file is part of the bisarca/bisarca package.
  *
- * This program is free software: you can redistribute it and/or modify it
- * under the terms of the GNU Affero General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or (at your
- * option) any later version.
+ * (c) Emanuele Minotto <minottoemanuele@gmail.com>
  *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public
- * License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace Bisarca\Command;
 
 use GuzzleHttp\Psr7\Uri;
+use Psr\Http\Message\UriInterface;
 
 trait UrlAwareTraitTestTrait
 {
     public function testGetUrl()
     {
-        $this->assertNull($this->object->getUrl());
+        $this->assertInstanceOf(UriInterface::class, $this->object->getUrl());
     }
 
     /**
@@ -59,6 +52,14 @@ trait UrlAwareTraitTestTrait
     {
         $url = 'http://www.example.com/';
         $class = get_class($this->object);
+
+        $object = $class::fromUrl($url);
+        $extracted = $object->getUrl();
+
+        $this->assertInstanceOf(Uri::class, $extracted);
+        $this->assertEquals($url, $extracted);
+
+        $url = new Uri($url);
 
         $object = $class::fromUrl($url);
         $extracted = $object->getUrl();

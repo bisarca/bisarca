@@ -1,11 +1,4 @@
 {
-    "authors": [
-        {
-            "email": "minottoemanuele@gmail.com",
-            "name": "Emanuele Minotto",
-            "role": "Lead Developer"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "Bisarca\\": "src/"
@@ -16,20 +9,14 @@
             "Bisarca\\": "tests/"
         }
     },
-    "bin": [
-        "bin/bisarca"
-    ],
     "config": {
         "sort-packages": true
     },
     "description": "Bisarca",
-    "license": [
-        "AGPL-3.0",
-        "proprietary"
-    ],
+    "license": "MIT",
     "name": "bisarca/bisarca",
     "require": {
-        "php": "^5.6 || ^7.0",
+        "php": "^7.0",
         "guzzlehttp/guzzle": "^6.0",
         "league/container": "^2.2",
         "league/tactician-container": "^1.0",
@@ -40,9 +27,13 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^1.11",
-        "mybuilder/phpunit-accelerator": "^1.1",
         "phpunit/phpunit": "^5.4",
         "symfony/phpunit-bridge": "^3.1"
     },
-    "type": "library"
+    "scripts": {
+        "test": [
+            "php-cs-fixer fix -vv --ansi",
+            "phpunit --colors=always"
+        ]
+    }
 }

@@ -1,20 +1,12 @@
 <?php
 
 /*
- * Copyright (C) 2016 Emanuele Minotto
+ * This file is part of the bisarca/bisarca package.
  *
- * This program is free software: you can redistribute it and/or modify it
- * under the terms of the GNU Affero General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or (at your
- * option) any later version.
+ * (c) Emanuele Minotto <minottoemanuele@gmail.com>
  *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public
- * License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace Bisarca\Command;
@@ -32,21 +24,17 @@ trait UrlAwareTrait
     /**
      * @return UriInterface
      */
-    public function getUrl()
+    public function getUrl(): UriInterface
     {
-        return $this->url;
+        return $this->url ?: new Uri();
     }
 
     /**
-     * @param string|UriInterface $url
+     * @param string $url
      */
-    public function setUrl($url)
+    public function setUrl(string $url)
     {
-        if (!$url instanceof UriInterface) {
-            $url = new Uri($url);
-        }
-
-        $this->url = $url;
+        $this->url = new Uri($url);
     }
 
     /**
@@ -54,7 +42,7 @@ trait UrlAwareTrait
      *
      * @return static
      */
-    public static function fromUrl($url)
+    public static function fromUrl(string $url)
     {
         $instance = new static();
         $instance->setUrl($url);
