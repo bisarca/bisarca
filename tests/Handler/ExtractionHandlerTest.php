@@ -65,9 +65,9 @@ class ExtractionHandlerTest extends PHPUnit_Framework_TestCase
     public function handleDataProvider()
     {
         return [
-            ['', 1],
-            ['<body><a href="/foo">bar</a></body>', 2],
-            ['<body></body>', 1],
+            ['', 0],
+            ['<body><a href="/foo">bar</a></body>', 1],
+            ['<body></body>', 0],
             [
                 '<body>
                     <a href="/foo">bar</a>
@@ -76,7 +76,7 @@ class ExtractionHandlerTest extends PHPUnit_Framework_TestCase
                     </p>
                     <img src="/img"/>
                 </body>',
-                3,
+                2,
             ],
             [
                 '<body>
@@ -86,7 +86,7 @@ class ExtractionHandlerTest extends PHPUnit_Framework_TestCase
                     </p>
                     <img src="/img"/>
                 </body>',
-                2,
+                1,
             ],
         ];
     }

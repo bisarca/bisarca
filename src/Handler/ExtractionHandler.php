@@ -44,12 +44,6 @@ class ExtractionHandler
             ->each(function (Crawler $node) {
                 return $this->nodePass($node);
             });
-
-        $sitemapsExtraction = new Command\SitemapsExtractionCommand();
-        $sitemapsExtraction->setContent($content);
-        $sitemapsExtraction->setUrl($url);
-
-        $this->commandBus->handle($sitemapsExtraction);
     }
 
     /**
