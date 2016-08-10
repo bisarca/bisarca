@@ -37,4 +37,5 @@ out to [@EmanueleMinotto](https://twitter.com/EmanueleMinotto) on Twitter.
 License
 -------
 
-All contents of this package are licensed under the [MIT license](LICENSE).
+All contents of this package are licensed under the [AGPL v3 license](LICENSE)
+or available under proprietary license for commercial purposes.
