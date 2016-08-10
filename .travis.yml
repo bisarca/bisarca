@@ -11,7 +11,7 @@ php:
 
 install:
   - composer require --no-update satooshi/php-coveralls:~0.6
-  - composer require --no-update sensiolabs/security-checker
+  - composer require --no-update sensiolabs/security-checker:^3.0
   - composer require --no-update roave/security-advisories:dev-master
   - composer install -n --no-progress
 

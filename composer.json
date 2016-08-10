@@ -13,7 +13,10 @@
         "sort-packages": true
     },
     "description": "Bisarca",
-    "license": "MIT",
+    "license": [
+        "AGPL-3.0",
+        "proprietary"
+    ],
     "name": "bisarca/bisarca",
     "require": {
         "php": "^7.0",
