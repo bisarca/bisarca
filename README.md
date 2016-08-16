@@ -20,14 +20,6 @@ $ composer require bisarca/bisarca
 This command requires you to have Composer installed globally, as explained
 in the [installation chapter](https://getcomposer.org/doc/00-intro.md) of the Composer documentation.
 
-Contribute
-----------
-
-Contributions to Bisarca are always welcome!
-
-* Report any bugs or issues you find on the [issue tracker](https://github.com/bisarca/bisarca/issues).
-* You can grab the source code at Bisarca's [Git repository](https://github.com/bisarca/bisarca).
-
 Support
 -------
 

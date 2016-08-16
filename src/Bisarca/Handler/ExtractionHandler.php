@@ -49,7 +49,7 @@ class ExtractionHandler
         $crawler = new Crawler($content, $url);
 
         $crawler
-            ->filter('a:not([rel*="nofollow"])')
+            ->filterXPath("//a[not(@rel and contains(@rel, 'nofollow'))]")
             ->each(function (Crawler $node) {
                 return $this->nodePass($node);
             });
