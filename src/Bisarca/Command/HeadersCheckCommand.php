@@ -42,7 +42,7 @@ class HeadersCheckCommand
     /**
      * Sets the value of headers.
      *
-     * @param array $headers The headers.
+     * @param array $headers The headers
      */
     public function setHeaders(array $headers)
     {

@@ -72,7 +72,7 @@ class Bisarca
     /**
      * Main function of the class, parses and extracts the link to follow.
      *
-     * @param string $url URL of the page to visit.
+     * @param string $url URL of the page to visit
      */
     public function loadUrl(string $url)
     {

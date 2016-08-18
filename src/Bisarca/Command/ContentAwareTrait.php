@@ -40,7 +40,7 @@ trait ContentAwareTrait
     /**
      * Sets the value of content.
      *
-     * @param string $content The content.
+     * @param string $content The content
      */
     public function setContent(string $content)
     {

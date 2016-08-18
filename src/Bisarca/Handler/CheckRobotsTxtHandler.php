@@ -22,9 +22,9 @@ namespace Bisarca\Handler;
 
 use Bisarca\Command\CheckRobotsTxtCommand;
 use Bisarca\Configuration;
+use Bisarca\RobotsTxt\Parser;
 use Exception;
 use GuzzleHttp\Client;
-use RobotsTxtParser;
 
 class CheckRobotsTxtHandler
 {
@@ -48,19 +48,23 @@ class CheckRobotsTxtHandler
     {
         $url = $command->getUrl();
 
+        $robotsUrl = sprintf('http://%s/robots.txt', $url->getHost());
+
         try {
-            $robotsUrl = sprintf('http://%s/robots.txt', $url->getHost());
             $content = (string) $this->client
                 ->request('GET', $robotsUrl)
                 ->getBody();
-
-            $parser = new RobotsTxtParser($content);
-            $parser->setUserAgent(Configuration::AGENT);
         } catch (Exception $exception) {
+            // content isn't available, than the bot can access
             return;
         }
 
-        if ($parser->isDisallowed($url->getPath())) {
+        $parser = new Parser();
+        $rulesets = $parser->parse($content);
+
+        $path = $url->getPath();
+
+        if (!$rulesets->isUserAgentAllowed(Configuration::AGENT, $path)) {
             throw new Exception();
         }
     }

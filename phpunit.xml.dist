@@ -8,4 +8,11 @@
             <directory suffix=".php">src</directory>
         </whitelist>
     </filter>
+    <logging>
+        <log charset="UTF-8" highlight="true" target="build/coverage" type="coverage-html" yui="true"/>
+        <log target="build/logs/clover.xml" type="coverage-clover"/>
+    </logging>
+    <php>
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak"/>
+    </php>
 </phpunit>

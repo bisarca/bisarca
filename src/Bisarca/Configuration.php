@@ -71,7 +71,7 @@ class Configuration
     /**
      * Sets the Crawler User-Agent.
      *
-     * @param string $userAgent The user agent.
+     * @param string $userAgent The user agent
      */
     public function setUserAgent(string $userAgent)
     {
