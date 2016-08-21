@@ -30,7 +30,6 @@ use League\Tactician\Handler\CommandNameExtractor\ClassNameExtractor;
 use League\Tactician\Handler\MethodNameInflector\HandleInflector;
 use League\Tactician\Plugins\LockingMiddleware;
 use SplQueue;
-use Symfony\Component\DomCrawler\Crawler;
 
 /**
  * Bisarca Crawler.
