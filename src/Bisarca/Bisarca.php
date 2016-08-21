@@ -43,6 +43,21 @@ class Bisarca
     use ContainerAwareTrait;
 
     /**
+     * Default services.
+     *
+     * @var array
+     */
+    const DEFAULT_SERVICES = [
+        Command\RequestUrlCommand::class => Handler\RequestUrlHandler::class,
+        Command\CheckRobotsTxtCommand::class => Handler\CheckRobotsTxtHandler::class,
+        Command\LoadUrlCommand::class => Handler\LoadUrlHandler::class,
+        Command\HeadersCheckCommand::class => Handler\HeadersCheckHandler::class,
+        Command\EnqueueUrlCommand::class => Handler\EnqueueUrlHandler::class,
+        Command\ExtractionCommand::class => Handler\ExtractionHandler::class,
+        Command\SitemapsExtractionCommand::class => Handler\SitemapsExtractionHandler::class,
+    ];
+
+    /**
      * Class constructor.
      */
     public function __construct()
@@ -58,7 +73,7 @@ class Bisarca
 
         $handlerMiddleware = new CommandHandlerMiddleware(
             new ClassNameExtractor(),
-            new ContainerLocator($this->container, $this->getServices()),
+            new ContainerLocator($this->container, self::DEFAULT_SERVICES),
             new HandleInflector()
         );
 
@@ -93,21 +108,5 @@ class Bisarca
                 ->get(SplQueue::class)
                 ->dequeue()
         );
-    }
-
-    /**
-     * @return array
-     */
-    private function getServices(): array
-    {
-        return [
-            Command\RequestUrlCommand::class => Handler\RequestUrlHandler::class,
-            Command\CheckRobotsTxtCommand::class => Handler\CheckRobotsTxtHandler::class,
-            Command\LoadUrlCommand::class => Handler\LoadUrlHandler::class,
-            Command\HeadersCheckCommand::class => Handler\HeadersCheckHandler::class,
-            Command\EnqueueUrlCommand::class => Handler\EnqueueUrlHandler::class,
-            Command\ExtractionCommand::class => Handler\ExtractionHandler::class,
-            Command\SitemapsExtractionCommand::class => Handler\SitemapsExtractionHandler::class,
-        ];
     }
 }
