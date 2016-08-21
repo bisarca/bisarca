@@ -6,6 +6,12 @@ cache:
 
 php:
   - 7.0
+  - 7.1
+
+matrix:
+  allow_failures:
+    - php: 7.1
+  fast_finish: true
 
 install:
   - composer require --no-update satooshi/php-coveralls:~0.6
