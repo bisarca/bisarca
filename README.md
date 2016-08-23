@@ -1,8 +1,9 @@
 Bisarca
 =======
 
-[![Build Status](https://travis-ci.org/bisarca/bisarca.svg)](https://travis-ci.org/bisarca/bisarca)
-[![Coverage Status](https://coveralls.io/repos/github/bisarca/bisarca/badge.svg)](https://coveralls.io/github/bisarca/bisarca)
+[![Build Status](https://img.shields.io/travis/bisarca/bisarca.svg)](https://travis-ci.org/bisarca/bisarca)
+[![Coverage Status](https://img.shields.io/coveralls/bisarca/bisarca.svg)](https://coveralls.io/github/bisarca/bisarca)
+[![Quality Score](https://img.shields.io/scrutinizer/g/bisarca/bisarca.svg)](https://scrutinizer-ci.com/g/bisarca/bisarca)
 
 The bisarca/bisarca library is the main repository, used as a bridge to
 integrate all the Bisarca components and subprojects.
