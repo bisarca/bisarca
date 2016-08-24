@@ -23,6 +23,7 @@
         "bisarca/robots-txt": "^1.0",
         "guzzlehttp/guzzle": "^6.0",
         "league/container": "^2.2",
+        "league/event": "^2.1",
         "league/tactician-container": "^1.0",
         "symfony/dom-crawler": "^2.8 || ^3.0"
     },
